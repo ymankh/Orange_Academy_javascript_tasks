@@ -21,7 +21,7 @@ var num2 = -7;
 var num3 = 2;
 
 var product = num1 * num2 * num3;
-if (product < 0) alert("-");
+if (product < 0) alert(" - ");
 else alert("+");
 
 /******* End Your Code ********* */
@@ -32,23 +32,23 @@ Output : 4, 0, -1 */
 /******* Start Your Code *********/
 
 var num1 = 4;
-var num2 = 0;
-var num3 = -1;
+var num2 = 8;
+var num3 = 1;
 
 if (num1 >= num2) {
-  if (num2 >= num3) console.log(`${num1} ${num2} ${num3}`);
+  if (num2 >= num3) alert(`${num1} ${num2} ${num3}`);
   else if (num1 >= num3) {
-    console.log(`${num1} ${num3} ${num2}`);
+    alert(`${num1} ${num3} ${num2}`);
   }
 } else if (num2 >= num1) {
-  if (num1 >= num3) console.log(`${num2} ${num1} ${num3}`);
+  if (num1 >= num3) alert(`${num2} ${num1} ${num3}`);
   else if (num2 >= num3) {
-    console.log(`${num2} ${num3} ${num1}`);
+    alert(`${num2} ${num3} ${num1}`);
   }
 } else if (num3 >= num1) {
-  if (num1 >= num2) console.log(`${num3} ${num1} ${num2}`);
+  if (num1 >= num2) alert(`${num3} ${num1} ${num2}`);
   else if (num2 >= num1) {
-    console.log(`${num3} ${num2} ${num1}`);
+    alert(`${num3} ${num2} ${num1}`);
   }
 }
 
