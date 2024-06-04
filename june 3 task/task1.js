@@ -43,7 +43,7 @@ var fruits=["Tomato","Banana","Watermelon"]
 
 var fruits = ["Tomato", "Banana", "Watermelon"];
 console.log(
-  `the index of  "Banana" in the fruit array ["Tomato", "Banana", "Watermelon"] is ${fruits.indexOf(
+  `the index of  "Banana" in the fruits array ["Tomato", "Banana", "Watermelon"] is ${fruits.indexOf(
     "Banana"
   )}`
 );
@@ -65,7 +65,7 @@ let myFavoriteThings = [
   "The dark night",
 ];
 
-console.log(`my favorite things are ` + myFavoriteThings.join(" "));
+console.log(`my favorite things are ` + myFavoriteThings.join(" ") + "\n");
 
 /*
 4
@@ -78,7 +78,9 @@ let myArray = [1, 4, 5];
 let firstVariable = myArray[0];
 
 console.log(
-  `The first element of the array myArray = [1, 4, 5] is ${firstVariable}`
+  `The first element of the array myArray = [1, 4, 5] is ${firstVariable}
+  
+  `
 );
 
 /*
@@ -93,9 +95,7 @@ let myOtherArray = [1, 4, 5];
 let LastValue = myOtherArray[myOtherArray.length - 1];
 
 console.log(
-  `the last element in the array [1, 4, 5] is myOtherArray[myOtherArray.length - 1] = ${
-    myOtherArray[myOtherArray.length - 1]
-  }`
+  `the last element in the array [1, 4, 5] is myOtherArray[myOtherArray.length - 1] = ${LastValue}`
 );
 /*
 6
