@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        #help-box {
+            width: 180px;
+            height: 30px;
+            background: yellow;
+            border: 1px solid;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="help-box">Can I help you?</div>
+    <script>
+        let box = document.getElementById("help-box");
+        box.addEventListener("mouseenter", (e)=> {box.innerText = "Hello World!"})
+        box.addEventListener("mouseout", (e)=> {box.innerText = "Can I help you?"})
+    </script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #text_area {
+        font-size: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="style">
+      <select name="fontfamily" id="fontfamily">
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Arial">Arial</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Courier New">Courier New</option>
+      </select>
+
+      <select id="fontsize" name="fontsize">
+        <option value="10px">10px</option>
+        <option value="15px">15px</option>
+        <option value="20px">20px</option>
+        <option value="40px">40px</option>
+      </select>
+      <input type="checkbox" id="italic" value="fontStyle" name="italic" />
+      <label for="italic">Italic</label>
+      <input type="checkbox" id="bold" value="fontWeight" name="bold" />
+      <label for="bold">Bold</label>
+      <input
+        type="checkbox"
+        value="textDecoration"
+        id="underline"
+        name="underline"
+      />
+      <label for="underline">Underline</label>
+    </div>
+    <textarea name="mu-text" id="my-text"></textarea>
+    <script>
+      let text_area = document.getElementById("my-text");
+      document
+        .querySelectorAll(`input[type="checkbox"]`)
+        .forEach((check_box) => {
+          check_box.addEventListener("change", (event) => {
+            text_area.style[check_box.value] = check_box.checked
+              ? check_box.name
+              : "";
+          });
+        });
+      document
+        .querySelector("#fontsize")
+        .addEventListener("change", (event) => {
+          text_area.style.fontSize = event.target.value;
+        });
+      document
+        .querySelector("#fontfamily")
+        .addEventListener("change", (event) => {
+          text_area.style.fontFamily = event.target.value;
+        });
+    </script>
+  </body>
+</html>

@@ -309,9 +309,364 @@ accept 2 parameters and calculate the multiply of these 2 numbers
 */
 
 function multiply(num1, num2) {
-  return num1 * num2
+  return num1 * num2;
 }
 
 console.log(` 5 multiplied by 68 equal to ${multiply(5, 68)}`);
 
+/*
+9
+Write a function called canIGetADrivingLicense that:
+accept 1 parameter represent the age
+and if the age greater than or equal to 20 return "yes you can"
+otherwise return "please come back after X years to get one"
 
+Ex: canIGetADrivingLicense(21)
+=> "yes you can"
+
+Ex: canIGetADrivingLicense(17)
+=> "please come back after 3 years to get one"
+
+Ex: canIGetADrivingLicense(20)
+=> "yes you can"
+
+*/
+
+function canIGetADrivingLicense(age) {
+  if (age >= 21) return "yes you can";
+  return `please come back after ${21 - age} years to get one`;
+}
+
+canIGetADrivingLicense(21);
+canIGetADrivingLicense(18);
+
+/*
+10
+Write a function called sameLength
+that accepts two strings as arguments,
+and returns true if those strings have the same length, and false otherwise.
+
+**hint: how we can know string length   Ex: : "tree".length   => 4
+
+Ex: sameLength("tree","clue")
+=> true
+
+Ex: sameLength("tree","car")
+=> false
+*/
+
+function sameLength(str1, str2) {
+  return str1.length === str2.length;
+}
+
+/*
+11
+Write a function called largerNumber
+that accept two numbers as arguments,
+and return the first larger numbers
+
+Ex: largerNumber(5,6)
+=> 6
+
+Ex: largerNumber(5,3)
+=> 5
+*/
+
+function largerNumber(num1, num2) {
+  return num1 >= num2 ? num1 : num2;
+}
+
+/*
+12
+Write a function called smallerNumber
+that accept three numbers as arguments,
+and return the first smaller number
+
+Ex: smallerNumber(8,6,7)
+=> 6
+
+Ex: smallerNumber(5,99,34)
+=> 5
+
+Ex: smallerNumber(5,99,3)
+=> 3
+
+Ex: smallerNumber(5,3,3)
+=> 3
+
+*/
+
+function smallerNumber(num1, num2, num3) {
+  if (num1 <= num2 && num1 <= num3) return num1;
+  if (num2 <= num1 && num2 <= num3) return num2;
+  if (num3 <= num2 && num3 <= num1) return num3;
+}
+
+/*
+13
+Write a function called shorterString
+that accept five string as an arguments,
+and return the first shorter string
+
+Ex: shorterString("air","school","car","by","github")
+=> by
+
+Ex: shorterString("air","tr","car","by","github")
+=> tr
+
+Ex: shorterString("by","tr","car","air","github")
+=> by
+
+Ex: shorterString("air","by","car","school","github")
+=> by
+
+Ex: shorterString("air","tr","by","car","github")
+=> by
+
+Ex: shorterString("air","tr","car","github","by")
+=> by
+
+*/
+
+function shorterString(...strings) {
+  strings.sort((str1, str2) => str1.length - str2.length);
+  return strings[0];
+}
+
+/*
+14
+Write a function called longerString
+that accept four string as an arguments,
+and return the first longer string
+
+Ex: longerString("air","school","car","github")
+=> school
+
+Ex: longerString("air","school","car","github")
+=> github
+
+try all the cases (change the order of the longestString)
+*/
+
+function longerString(...strings) {
+  strings.sort((str1, str2) => str2.length - str1.length);
+  return strings[0];
+}
+
+/*
+15
+Write a function called isEven
+that accept 1 argument as a number,
+and return true if this number is even
+and false if this number is odd
+
+Ex: isEven(1)
+=> false
+Ex: isEven(2)
+=> true
+
+*/
+
+function isEven(num) {
+  return num % 2 === 0;
+}
+
+/*
+16
+Write a function called isOdd
+that accept 1 argument as a number,
+and return true if this number is Odd
+and false if this number is Even
+
+Ex: isOdd(4)
+=> false
+Ex: isOdd(5)
+=> true
+
+*/
+function isOdd(number) {
+  return number % 2 === 1;
+}
+/*
+17
+Write a function called positive
+that accept 1 argument as a number,
+and return the positive version of the number passed
+
+Ex: positive(4)
+=> 4
+Ex: positive(-5)
+=> 5
+
+*/
+
+function positive(num) {
+  return num < 0 ? num * -1 : num;
+}
+
+/*
+18
+Write a function called fullName
+that accept two parameters, firstName and lastName,
+and returns the firstName and lastName concatenated
+together with a space in between.
+
+Ex: fullName("Adam","McCallen")
+=> "Adam McCallen"
+Ex: fullName("Alex", "Mercer")
+=> "Alex Mercer"
+*/
+
+function fullName(firstName, lastName) {
+  return `${firstName} ${lastName}`;
+}
+
+/*
+19
+Write a function called average
+that takes five numbers as inputs
+and returns the average of those numbers.
+
+Ex: average(1,2,3,4,5)
+=> 3
+
+Ex: average(5,7,9,3,5)
+=> 5.8
+
+*/
+function average(...numbers) {
+  let sum = 0;
+  for (const number of numbers) {
+    sum += number;
+  }
+  return sum / numbers.length;
+}
+
+/*
+20
+Write a function called randomNumber
+that didnt takes any parameter
+and returns a random number between 0-1
+** hint: you can seacrh using MDN
+
+Ex: randomNumber()
+=> 0.2278
+
+Ex: randomNumber()
+=> 0.475
+
+*/
+
+function randomNumber() {
+  return Math.random();
+}
+
+/*
+21
+Write a function called randomBetweenNumbers
+that takes 2 parameters
+and returns a random number between them
+** hint: you can seacrh using MDN
+
+Ex: randomBetweenNumbers(1,8)
+=> 7.5412
+
+Ex: randomBetweenNumbers(3,100)
+=> 23
+
+*/
+
+function randomBetweenNumbers(num1, num2) {
+  return Math.random() * (num2 - num1) + num1;
+}
+
+/*
+22
+Write a function called scoreInUniversty
+that takes 1 parameters
+and returns the alpabet in the unevirsty
+A => 95-100
+B => 85-94
+C => 70-84
+D=> 50-69
+F=> 0-49
+
+Ex: scoreInUniversty(96)
+=> "A"
+
+Ex: scoreInUniversty(3)
+=> "F"
+
+Ex: scoreInUniversty(71)
+=> "C"
+*/
+
+function scoreInUniversty(gradeInNumber) {
+  if (gradeInNumber < 49) return "F";
+  if (gradeInNumber < 69) return "D";
+  if (gradeInNumber < 84) return "C";
+  if (gradeInNumber < 94) return "B";
+  return "A";
+}
+
+/*
+23
+Write a function called counter
+that will returns a number bigger
+than the one that returnd before
+and start from 0
+
+Ex: counter()
+=> 1
+
+Ex: counter()
+=> 2
+
+Ex: counter()
+=> 3
+
+*/
+
+
+function counter() {
+  if(! this._count) this._count = 0; return this._count++
+}
+
+
+/*
+24
+Write a function called resetCounter
+that will reset the previuos function
+and return the number before reset and
+a string say that the counter reset
+
+Ex: counter()
+=> 1
+
+Ex: counter()
+=> 2
+
+Ex: counter()
+=> 3
+
+Ex: resetCounter()
+=> 3 and the counter reset now
+
+Ex: counter()
+=> 1
+
+Ex: counter()
+=> 2
+
+Ex: resetCounter()
+=> 2 and the counter reset now
+
+Ex: counter()
+=> 1
+*/
+
+function resetCounter() {
+  let val = this._count;
+  this._count = undefined;
+  if (! val) return 0
+}
