@@ -627,11 +627,10 @@ Ex: counter()
 
 */
 
-
 function counter() {
-  if(! this._count) this._count = 0; return this._count++
+  if (!this._count) this._count = 0;
+  return this._count++;
 }
-
 
 /*
 24
@@ -668,5 +667,6 @@ Ex: counter()
 function resetCounter() {
   let val = this._count;
   this._count = undefined;
-  if (! val) return 0
+  if (!val) return 0;
+  return val - 1;
 }
