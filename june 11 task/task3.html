@@ -28,7 +28,12 @@
       <input type="text" name="lastName" id="lastName" />
       <div id="lastName-warning" class="warning"></div>
       <label for="birthDate">Enter birth date</label>
-      <input type="text" name="birthDate" id="birthDate" placeholder="dd/mm/yyyy" />
+      <input
+        type="text"
+        name="birthDate"
+        id="birthDate"
+        placeholder="dd/mm/yyyy"
+      />
       <div id="birthDate-warning" class="warning"></div>
       <label for="email">Enter an email</label>
       <input type="text" name="email" id="email" />
@@ -58,6 +63,39 @@
             "You can not use numbers in your last name!!!!!!!!!!!";
         else warning.innerText = "";
       });
+      document.getElementById("birthDate").addEventListener("input", (e) => {
+        let warning = document.getElementById("birthDate-warning");
+        if (
+          !/(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0,1,2])\/(19|20)\d{2}/.test(
+            e.target.value
+          )
+        )
+          warning.innerText = "invalid birth date!!!!!!!";
+        else warning.innerText = "";
+      });
+      let email = document.getElementById("email");
+      email.addEventListener("input", (e) => {
+        let warning = document.getElementById("email-warning");
+        if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(e.target.value))
+          warning.innerText = "INVALID EMAIL!!!!!!!";
+        else warning.innerText = "";
+      });
+      document.getElementById("confirmEmail").addEventListener("input", (e) => {
+        let warning = document.getElementById("confirmEmail-warning");
+        if (email.value != e.target.value)
+          warning.innerText = "Email should match!!!!!!!";
+        else warning.innerText = "";
+      });
+      let password = document.getElementById("password");
+
+      document
+        .getElementById("confirmPassword")
+        .addEventListener("input", (e) => {
+          let warning = document.getElementById("confirmPassword-warning");
+          if (password.value != e.target.value)
+            warning.innerText = "Email should match!!!!!!!";
+          else warning.innerText = "";
+        });
     </script>
   </body>
 </html>
