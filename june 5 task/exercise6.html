@@ -25,8 +25,10 @@
     </style>
   </head>
   <body>
-    <input type="text" id="song-text-field" />
-    <button id="add-song-button">Add song</button>
+    <form>
+      <input type="text" id="song-text-field" />
+      <button type="button" id="add-song-button">Add song</button>
+    </form>
     <ul id="song-lest"></ul>
     <script>
       let song_lest = document.getElementById("song-lest");
@@ -40,12 +42,13 @@
       document
         .getElementById("add-song-button")
         .addEventListener("click", () => {
-          addSong(song_text_field.value);
+          let value = song_text_field.value;
+          if (!value) return;
+          addSong(value);
           song_array.push(song_text_field.value);
           localStorage.song_array = JSON.stringify(song_array);
           song_text_field.value = "";
         });
-
       function addSong(value) {
         let new_song = document.createElement("li");
         new_song.innerText = value;

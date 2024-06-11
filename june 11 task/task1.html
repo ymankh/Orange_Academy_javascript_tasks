@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animals from API</title>
+    <style>
+      #image {
+        width: 400px;
+      }
+      .image-container {
+        height: 400px;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <select name="animal" id="animals-select"></select>
+    </form>
+    <div class="image-container">
+      <img id="image" src="assets/Spinner.gif" alt="animal" />
+    </div>
+    <script>
+      async function loadData() {
+        let response = await fetch(
+          "https://66681676f53957909ff67af8.mockapi.io/users/Animals"
+        );
+        let data = await response.json();
+        let select = document.getElementById("animals-select");
+        let image = document.getElementById("image");
+        data.forEach((animal) => {
+          let option = document.createElement("option");
+          option.value = animal.image;
+          option.innerText = animal.name;
+          option.id = animal.id;
+          select.appendChild(option);
+        });
+        image.src = data[0].image;
+        select.addEventListener("change", (event) => {
+          image.src = select.value;
+        });
+      }
+      loadData();
+    </script>
+  </body>
+</html>
